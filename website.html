@@ -1,0 +1,69 @@
+<html>	
+<head>
+<style>
+table{
+	text-align="center";
+}
+</style>	
+<script>
+	function f1(){
+		var a=document.getElementById("txtname").value;
+		var b=document.getElementById("txtnum").value;
+		var c=document.getElementById("optburger");
+		var d=document.getElementById("optrolls");
+		var e=document.getElementById("optice");
+		var mcost=0;
+		var mname="";
+		var acost=0;
+		var aname="";
+		if (c.checked){
+			mcost=170;
+			mname=c.value;
+		}
+		if (d.checked){
+			mcost=110;
+			mname=d.value;
+		}
+		if (e.checked){
+			acost=70;
+			mcost+=acost;
+			aname=e.value;
+			mname=mname+"+"+aname;
+		}
+		document.write("<font size='6' color='green' face='cursive'><h4>Order Summary</h4></font><br><font size='2' color='green'>Your Name:  " + a+"<br><font size='2' color='green'>Contact no.  "+b+"<br><font size='2' color='green'>Your Meal is:  "+mname+"<br><font size='2' color='green'> Total Amount=  &#8377;"+mcost+"<br><br><button onclick='window.print()'><font color='green' size='3'>Print Bill</button>");
+	}
+</script>
+</head>
+<body>
+<table width="800" border="12" cellpadding="4" cellspacing="4" id="order" align="center">
+	<tr>
+	<td colspan="2"><font size="5" color="green" face="cursive">Customer details</font></td>
+	</tr>
+	<tr>
+	<td><font size="3" color="green">Your Name:</font></td>
+	<td><input type="text" id="txtname"></td>
+	</tr>
+	<tr>
+		<td><font size="3" color="green">Contact-no.:</font></td>
+		<td><input type="text" id="txtnum"></td>
+	</tr>
+	<tr>
+	<td colspan="2"><font size="5" color="green" face="cursive">Select Your Meal</font></td>
+	</tr>
+	<tr>
+	<td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwaxjA6k3YySwYGOVMdIbobCVCV2TuoDXXGg&usqp=CAU" width="200" height="100"><input type="radio" value="omgBurger" id="optburger" name="meal"><font color="green" size="4">omgBurger(&#8377;170/-)</font></td>
+	<td><img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/10-healthy-fast-food-restaurants-1296x728-feature.jpg" width="200" height="100"><input type="radio" value="omgRolls" id="optrolls" name="meal"><font color="green" size="4">omgRolls(&#8377;110/-)</font></td>
+	</tr>
+	<tr>
+	<td colspan="2"><font size="5" color="green" face="cursive">Choose Add-on's</font></td>
+	</tr>
+	<tr>
+	<td><img src="https://www.oetker.in/Recipe/Recipes/oetker.in/in-en/dessert/image-thumb__52705__RecipeDetailsLightBox/brownie-with-vanilla-ice-cream.jpg" width="200" height="100"><input type="checkbox" value="icecream" id="optice"><font color="green" size="4">ICE-CREAM(&#8377;70/-)</font></td>
+	</tr>
+	<tr>
+	<td><input type="button" value="Place Order" onclick="f1()"></td>
+	</tr>
+</table>
+
+</body>
+</html>
